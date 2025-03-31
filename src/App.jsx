@@ -24,28 +24,46 @@ import "./styles.css";
  * If you don't have one of the social sites listed, leave it as an empty string.
  */
 const siteProps = {
-  name: "Alexandrie Grenier",
-  title: "Web Designer & Content Creator",
-  email: "alex@example.com",
-  gitHub: "microsoft",
-  instagram: "microsoft",
-  linkedIn: "satyanadella",
+  name: "Pankaj Ojha",
+  title: "Software Engineer",
+  email: "pnkjojha4@gmail.com",
+  gitHub: "https://github.com/punkujkun",
+  linkedIn: "https://www.linkedin.com/in/punkujkun/",
   medium: "",
-  twitter: "microsoft",
-  youTube: "Code",
+  twitter: "",
+  youTube: "",
 };
 
-const primaryColor = "#4E567E";
-const secondaryColor = "#D2F1E4";
+const primaryColor = "#1E1E2F";
+const secondaryColor = "#2A2A40";
+const accentColor = "#4ECCA3";
+const textColor = "#E0E0E0";
+const backgroundColor = "#121212";
 
 const App = () => {
   return (
-    <div id="main">
-      <Header />
-      <Home name={siteProps.name} title={siteProps.title} />
-      <About />
-      <Portfolio />
-      <Footer {...siteProps} primaryColor={primaryColor} secondaryColor={secondaryColor} />
+    <div
+      id="main"
+      style={{
+        backgroundColor: backgroundColor, // Set background color for the main container
+        color: textColor, // Set text color for the main container
+      }}
+    >
+      <Header primaryColor={primaryColor} textColor={textColor} />
+      <Home
+        name={siteProps.name}
+        title={siteProps.title}
+        textColor={textColor}
+        accentColor={accentColor}
+      />
+      <About backgroundColor={secondaryColor} textColor={textColor} accentColor={accentColor} />
+      <Portfolio backgroundColor={secondaryColor} textColor={textColor} accentColor={accentColor} />
+      <Footer
+        {...siteProps}
+        primaryColor={primaryColor}
+        secondaryColor={secondaryColor}
+        textColor={textColor}
+      />
     </div>
   );
 };

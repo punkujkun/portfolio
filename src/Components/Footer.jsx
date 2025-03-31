@@ -36,6 +36,7 @@ const Footer = (props) => {
     medium,
     name,
     primaryColor,
+    textColor, // Use textColor for consistent text styling
     twitter,
     youTube,
   } = props;
@@ -49,8 +50,9 @@ const Footer = (props) => {
         alignItems: "center",
         gap: "2.5rem",
         padding: "5rem 0 3rem",
-        backgroundColor: primaryColor,
-        width: "100vw"
+        backgroundColor: primaryColor, // Use primaryColor for the footer background
+        color: textColor, // Use textColor for the text
+        width: "100vw",
       }}
     >
       <div
@@ -113,7 +115,7 @@ const Footer = (props) => {
           </a>
         )}
       </div>
-      <p className="small" style={{ marginTop: 0, color: "white" }}>
+      <p className="small" style={{ marginTop: 0, color: textColor }}>
         Created by {name}
       </p>
     </div>
@@ -133,9 +135,9 @@ Footer.propTypes = {
   medium: PropTypes.string,
   name: PropTypes.string.isRequired,
   primaryColor: PropTypes.string,
+  textColor: PropTypes.string, // Added textColor prop
   twitter: PropTypes.string,
   youTube: PropTypes.string,
-
 };
 
 export default Footer;
